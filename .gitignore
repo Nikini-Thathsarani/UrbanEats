@@ -1,6 +1,6 @@
 /config/config.php
 /logs/*.log
-/public/uploads/*
+#/public/uploads/*
 !/public/uploads/.gitkeep
 .vscode/
 .idea/
