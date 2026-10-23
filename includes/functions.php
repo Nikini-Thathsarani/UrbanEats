@@ -115,3 +115,22 @@ function upload_dish_image(array $file): string
     
     throw new Exception("Failed to save the uploaded image.");
 }
+
+/**
+ * Record stock movements (restock, wastage, adjustments) for Component B[cite: 3].
+ */
+function log_stock_movement($pdo, int $dish_id, int $change_qty, string $movement_type, ?string $reason = null): bool
+{
+    try {
+        $user_id = isset($_SESSION['user_id']) ? (int) $_SESSION['user_id'] : null;
+        
+        $stmt = $pdo->prepare("
+            INSERT INTO stock_movements (dish_id, user_id, change_qty, movement_type, reason, created_at) 
+            VALUES (?, ?, ?, ?, ?, NOW())
+        ");
+        return $stmt->execute([$dish_id, $user_id, $change_qty, $movement_type, $reason]);
+    } catch (Throwable $ex) {
+        app_log('log_stock_movement failed: ' . $ex->getMessage());
+        return false;
+    }
+}
