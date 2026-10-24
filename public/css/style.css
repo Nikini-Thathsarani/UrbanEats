@@ -136,7 +136,7 @@ code {
 
 /* Header & Navigation */
 .main-header {
-    background: rgba(14, 16, 21, 0.95);
+    background: rgba(14, 16, 21, 0.96);
     border-bottom: 1px solid rgba(229, 168, 85, 0.25);
     position: sticky;
     top: 0;
@@ -146,38 +146,46 @@ code {
 }
 
 .nav-container {
-    width: min(1200px, 94%);
+    width: min(1320px, 96%);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 76px;
+    min-height: 76px;
+    padding: 8px 0;
     position: relative;
+    gap: 16px;
 }
 
 .brand-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
     text-decoration: none !important;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .header-logo-icon {
     width: 44px;
     height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     border-radius: 50%;
     border: 2px solid #e5a855;
-    background: rgba(229, 168, 85, 0.1);
-    display: flex;
+    background: rgba(229, 168, 85, 0.12);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px rgba(229, 168, 85, 0.2);
+    box-shadow: 0 0 15px rgba(229, 168, 85, 0.25);
     flex-shrink: 0;
 }
 
 .header-brand-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
 }
 
 .header-brand-title {
@@ -186,28 +194,36 @@ code {
     font-weight: 700;
     color: #e5a855;
     line-height: 1.1;
+    display: block;
+    white-space: nowrap;
 }
 
 .header-brand-subtitle {
     font-size: 0.72rem;
     color: #a4aab7;
     letter-spacing: 0.8px;
+    display: block;
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    flex-wrap: nowrap;
 }
 
 .nav-links a {
     color: var(--text-main);
     font-weight: 500;
-    font-size: 0.95rem;
-    padding: 6px 12px;
+    font-size: 0.92rem;
+    padding: 6px 10px;
     border-radius: var(--radius-sm);
     text-decoration: none;
     transition: all 0.25s ease;
+    white-space: nowrap; /* Prevents awkward wrapping into two lines */
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -219,7 +235,7 @@ code {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 22px;
+    padding: 8px 20px;
     border-radius: 9999px;
     border: 1.5px solid rgba(229, 168, 85, 0.7);
     background: rgba(229, 168, 85, 0.05);
@@ -228,6 +244,7 @@ code {
     font-weight: 500;
     text-decoration: none !important;
     transition: all 0.25s ease;
+    white-space: nowrap;
 }
 
 .nav-links a.nav-btn-link:hover {
@@ -239,10 +256,12 @@ code {
 .nav-user-dropdown {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-left: 10px;
-    padding-left: 14px;
+    gap: 10px;
+    margin-left: 8px;
+    padding-left: 12px;
     border-left: 1px solid var(--border);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-toggle, .nav-toggle-label {
@@ -409,10 +428,14 @@ code {
 }
 
 .user-badge {
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: var(--radius-sm);
     font-size: 0.82rem;
     font-weight: 600;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .badge-action {

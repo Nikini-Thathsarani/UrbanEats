@@ -23,20 +23,20 @@ $userName = $_SESSION['full_name'] ?? 'User';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= url('public/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= url('public/css/style.css') ?>?v=<?= @filemtime(__DIR__ . '/../public/css/style.css') ?: time() ?>">
 </head>
 <body>
 <header class="main-header">
     <div class="nav-container">
-        <a href="<?= url('public/index.php') ?>" class="brand-logo">
-            <div class="header-logo-icon">
+        <a href="<?= url('public/index.php') ?>" class="brand-logo" style="display:inline-flex;align-items:center;gap:12px;text-decoration:none !important;flex-shrink:0;">
+            <div class="header-logo-icon" style="width:44px;height:44px;min-width:44px;min-height:44px;border-radius:50%;border:2px solid #e5a855;background:rgba(229,168,85,0.12);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(229,168,85,0.25);flex-shrink:0;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e5a855" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 2v18"/><path d="M6 2v7a3 3 0 0 0 6 0V2"/><path d="M9 12v8"/>
                 </svg>
             </div>
-            <div class="header-brand-text">
-                <span class="header-brand-title">UrbanEats</span>
-                <span class="header-brand-subtitle">Good Food &bull; Better Mood</span>
+            <div class="header-brand-text" style="display:flex;flex-direction:column;justify-content:center;line-height:1.2;">
+                <span class="header-brand-title" style="font-family:'Playfair Display',Georgia,serif;font-size:1.55rem;font-weight:700;color:#e5a855;line-height:1.1;display:block;">UrbanEats</span>
+                <span class="header-brand-subtitle" style="font-size:0.72rem;color:#a4aab7;letter-spacing:0.8px;display:block;white-space:nowrap;">Good Food &bull; Better Mood</span>
             </div>
         </a>
 
