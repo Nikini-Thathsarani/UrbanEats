@@ -59,7 +59,7 @@ $userName = $_SESSION['full_name'] ?? 'User';
                 <?php if ($userRole === 'customer'): ?>
                     <a href="<?= url('orders/cart.php') ?>">My Cart</a>
                     <a href="<?= url('orders/history.php') ?>">My Orders</a>
-                <?php elseif ($userRole === 'staff'): ?>
+                <?php elseif ($userRole === 'staff' || strtolower((string)$userRole) === 'kitchen staff'): ?>
                     <a href="<?= url('orders/kitchen.php') ?>">Kitchen Queue</a>
                     <a href="<?= url('public/menu/manage.php') ?>">Menu & Stock</a>
                 <?php elseif ($userRole === 'administrator'): ?>

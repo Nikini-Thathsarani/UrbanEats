@@ -79,7 +79,21 @@ function current_user_id(): ?int
 
 function current_role(): ?string
 {
-    return $_SESSION['role'] ?? null;
+    $role = $_SESSION['role'] ?? null;
+    if ($role === null) {
+        return null;
+    }
+    $lower = strtolower(trim((string)$role));
+    if ($lower === 'kitchen staff' || $lower === 'staff' || $lower === 'kitchen') {
+        return 'staff';
+    }
+    if ($lower === 'administrator' || $lower === 'admin') {
+        return 'administrator';
+    }
+    if ($lower === 'customer') {
+        return 'customer';
+    }
+    return $lower;
 }
 
 /** Completely end the session (used by logout and by forced sign-outs). */
