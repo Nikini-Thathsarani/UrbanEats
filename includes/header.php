@@ -20,14 +20,24 @@ $userName = $_SESSION['full_name'] ?? 'User';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($pageTitle) ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= url('public/css/style.css') ?>">
 </head>
 <body>
 <header class="main-header">
     <div class="nav-container">
         <a href="<?= url('public/index.php') ?>" class="brand-logo">
-            <span class="logo-icon">🍲</span>
-            <span class="logo-text">Urban<strong>Eats</strong></span>
+            <div class="header-logo-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e5a855" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2"/><path d="M15 2v18"/><path d="M6 2v7a3 3 0 0 0 6 0V2"/><path d="M9 12v8"/>
+                </svg>
+            </div>
+            <div class="header-brand-text">
+                <span class="header-brand-title">UrbanEats</span>
+                <span class="header-brand-subtitle">Good Food &bull; Better Mood</span>
+            </div>
         </a>
 
         <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
