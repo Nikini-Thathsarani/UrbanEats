@@ -136,12 +136,13 @@ code {
 
 /* Header & Navigation */
 .main-header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: rgba(14, 16, 21, 0.95);
+    border-bottom: 1px solid rgba(229, 168, 85, 0.25);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -150,27 +151,47 @@ code {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    height: 76px;
     position: relative;
 }
 
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1.4rem;
-    color: var(--primary);
-    font-weight: 700;
+    gap: 12px;
     text-decoration: none !important;
-    font-family: 'Playfair Display', serif;
 }
 
-.brand-logo .logo-icon {
-    font-size: 1.7rem;
+.header-logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #e5a855;
+    background: rgba(229, 168, 85, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(229, 168, 85, 0.2);
+    flex-shrink: 0;
 }
 
-.brand-logo strong {
-    color: var(--text-light);
+.header-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-brand-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #e5a855;
+    line-height: 1.1;
+}
+
+.header-brand-subtitle {
+    font-size: 0.72rem;
+    color: #a4aab7;
+    letter-spacing: 0.8px;
 }
 
 .nav-links {
@@ -183,14 +204,36 @@ code {
     color: var(--text-main);
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 6px 10px;
+    padding: 6px 12px;
     border-radius: var(--radius-sm);
     text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 .nav-links a:hover {
     color: var(--primary);
-    background: var(--surface-alt);
+    background: rgba(229, 168, 85, 0.08);
+}
+
+.nav-links a.nav-btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 22px;
+    border-radius: 9999px;
+    border: 1.5px solid rgba(229, 168, 85, 0.7);
+    background: rgba(229, 168, 85, 0.05);
+    color: #ffffff !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.nav-links a.nav-btn-link:hover {
+    background: #e5a855;
+    color: #07080a !important;
+    box-shadow: 0 0 18px rgba(229, 168, 85, 0.35);
 }
 
 .nav-user-dropdown {
