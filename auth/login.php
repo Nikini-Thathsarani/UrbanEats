@@ -91,9 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 log_action('LOGIN', 'User logged in successfully', (int) $user['user_id']);
 
-                if ($user['role_name'] === 'administrator') {
+                $role = current_role();
+                if ($role === 'administrator') {
                     redirect('admin/dashboard.php');
-                } elseif ($user['role_name'] === 'staff') {
+                } elseif ($role === 'staff') {
                     redirect('public/menu/manage.php');
                 } else {
                     redirect('public/index.php');
