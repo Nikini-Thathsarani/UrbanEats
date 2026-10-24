@@ -51,8 +51,7 @@ $userName = $_SESSION['full_name'] ?? 'User';
                     <a href="<?= url('orders/history.php') ?>">My Orders</a>
                 <?php elseif ($userRole === 'staff'): ?>
                     <a href="<?= url('orders/kitchen.php') ?>">Kitchen Queue</a>
-                    <a href="<?= url('menu/manage.php') ?>">Manage Menu</a>
-                    <a href="<?= url('menu/stock.php') ?>">Stock</a>
+                    <a href="<?= url('public/menu/manage.php') ?>">Menu & Stock</a>
                 <?php elseif ($userRole === 'administrator'): ?>
                     <a href="<?= url('admin/dashboard.php') ?>">Dashboard</a>
                     <a href="<?= url('admin/users.php') ?>">Users</a>

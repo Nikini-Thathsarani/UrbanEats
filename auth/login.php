@@ -7,6 +7,8 @@ require_once __DIR__ . '/../includes/auth.php';
 if (is_logged_in()) {
     if (current_role() === 'administrator') {
         redirect('admin/dashboard.php');
+    } elseif (current_role() === 'staff') {
+        redirect('public/menu/manage.php');
     } else {
         redirect('public/index.php');
     }
@@ -91,6 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($user['role_name'] === 'administrator') {
                     redirect('admin/dashboard.php');
+                } elseif ($user['role_name'] === 'staff') {
+                    redirect('public/menu/manage.php');
                 } else {
                     redirect('public/index.php');
                 }
