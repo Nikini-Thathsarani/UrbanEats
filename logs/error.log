@@ -6,3 +6,6 @@
 [22-Oct-2026 17:48:33 Europe/Berlin] config/config.php is missing. Copy config/config.sample.php to config/config.php
 [22-Oct-2026 17:53:01 Europe/Berlin] config/config.php is missing. Copy config/config.sample.php to config/config.php
 [22-Oct-2026 17:54:13 Europe/Berlin] config/config.php is missing. Copy config/config.sample.php to config/config.php
+[2026-10-27 20:04:34] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.username' in 'field list' in C:\xampp\htdocs\UrbanEats\UrbanEats\public\orders\kitchen_queue.php:40
+[2026-10-27 20:25:39] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.username' in 'field list' in C:\xampp\htdocs\UrbanEats\UrbanEats\public\orders\confirmation.php:12
+[2026-10-27 20:26:38] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.username' in 'field list' in C:\xampp\htdocs\UrbanEats\UrbanEats\public\orders\confirmation.php:12
