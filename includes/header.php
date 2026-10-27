@@ -57,16 +57,16 @@ $userName = $_SESSION['full_name'] ?? 'User';
             <?php else: ?>
 
                 <?php if ($userRole === 'customer'): ?>
-                    <a href="<?= url('orders/cart.php') ?>">My Cart</a>
-                    <a href="<?= url('orders/history.php') ?>">My Orders</a>
+                    <a href="<?= url('public/orders/cart.php') ?>">My Cart</a>
+                    <a href="<?= url('public/orders/checkout.php') ?>">Checkout</a>
+                    <a href="<?= url('public/orders/history.php') ?>">Order History</a>
                 <?php elseif ($userRole === 'staff' || strtolower((string)$userRole) === 'kitchen staff'): ?>
-                    <a href="<?= url('orders/kitchen.php') ?>">Kitchen Queue</a>
+                    <a href="<?= url('public/orders/kitchen_queue.php') ?>">Kitchen Queue</a>
                     <a href="<?= url('public/menu/manage.php') ?>">Menu & Stock</a>
                 <?php elseif ($userRole === 'administrator'): ?>
                     <a href="<?= url('admin/dashboard.php') ?>">Dashboard</a>
                     <a href="<?= url('admin/users.php') ?>">Users</a>
                     <a href="<?= url('admin/audit-log.php') ?>">Audit Log</a>
-                    <a href="<?= url('admin/reports.php') ?>">Reports</a>
                 <?php endif; ?>
 
                 <div class="nav-user-dropdown">

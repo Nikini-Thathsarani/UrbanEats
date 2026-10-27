@@ -35,6 +35,7 @@ if (!$dish) {
         </p>
         <?php if ($dish['quantity_in_stock'] > 0): ?>
             <form action="../orders/cart.php" method="POST">
+                <input type="hidden" name="action" value="add">
                 <input type="hidden" name="dish_id" value="<?= $dish['dish_id'] ?>">
                 <input type="number" name="quantity" value="1" min="1" max="<?= $dish['quantity_in_stock'] ?>" style="width: 60px; padding: 5px;">
                 <button type="submit" class="btn-gold">Add to Cart</button>
