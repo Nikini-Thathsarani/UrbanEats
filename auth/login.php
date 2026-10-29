@@ -539,102 +539,6 @@ require_once __DIR__ . '/../includes/header.php';
     gap: 10px;
 }
 
-/* DEMO ACCOUNTS BOX */
-.demo-accounts-box {
-    margin-top: 24px;
-    background: rgba(10, 12, 17, 0.85);
-    border: 1px dashed rgba(229, 168, 85, 0.35);
-    border-radius: 12px;
-    padding: 14px 16px;
-}
-
-.demo-accounts-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #e5a855;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-}
-
-.demo-title-left {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.demo-badge {
-    background: rgba(229, 168, 85, 0.15);
-    border: 1px solid rgba(229, 168, 85, 0.3);
-    color: #fce7b0;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 0.72rem;
-    font-family: monospace;
-}
-
-.demo-accounts-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.demo-account-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.82rem;
-    padding: 6px 10px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.demo-account-item:hover {
-    background: rgba(229, 168, 85, 0.12);
-    transform: translateX(3px);
-}
-
-.role-pill {
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.role-admin {
-    background: rgba(239, 68, 68, 0.2);
-    color: #fca5a5;
-    border: 1px solid rgba(239, 68, 68, 0.35);
-}
-
-.role-staff {
-    background: rgba(59, 130, 246, 0.2);
-    color: #93c5fd;
-    border: 1px solid rgba(59, 130, 246, 0.35);
-}
-
-.role-customer {
-    background: rgba(16, 185, 129, 0.2);
-    color: #6ee7b7;
-    border: 1px solid rgba(16, 185, 129, 0.35);
-}
-
-.demo-account-item code {
-    color: #e5e7eb;
-    font-family: monospace;
-    font-size: 0.82rem;
-}
-
-.demo-account-item:hover code {
-    color: #e5a855;
-}
-
 /* CORNER BOTANICAL LEAF LINE-ART (BOTTOM LEFT OF SCREEN) */
 .screen-bottom-left-leaves {
     position: fixed;
@@ -702,11 +606,6 @@ require_once __DIR__ . '/../includes/header.php';
         gap: 20px;
     }
 
-    .demo-account-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-    }
 }
 </style>
 
@@ -862,31 +761,6 @@ require_once __DIR__ . '/../includes/header.php';
                     Don't have an account yet? <a href="<?= url('auth/register.php') ?>" class="gold-register-link">Create an account</a>
                 </div>
 
-                <!-- TEST ACCOUNTS QUICK HELPER -->
-                <div class="demo-accounts-box">
-                    <div class="demo-accounts-title">
-                        <span class="demo-title-left">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e5a855" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            Demo Accounts (Click to Auto-fill)
-                        </span>
-                        <span class="demo-badge">Key: Test@1234</span>
-                    </div>
-                    <div class="demo-accounts-grid">
-                        <div class="demo-account-item" onclick="fillDemo('admin@urbaneats.lk')" title="Click to auto-fill Admin credentials">
-                            <span class="role-pill role-admin">Admin</span>
-                            <code>admin@urbaneats.lk</code>
-                        </div>
-                        <div class="demo-account-item" onclick="fillDemo('staff1@urbaneats.lk')" title="Click to auto-fill Staff credentials">
-                            <span class="role-pill role-staff">Staff</span>
-                            <code>staff1@urbaneats.lk</code>
-                        </div>
-                        <div class="demo-account-item" onclick="fillDemo('customer1@urbaneats.lk')" title="Click to auto-fill Customer credentials">
-                            <span class="role-pill role-customer">Customer</span>
-                            <code>customer1@urbaneats.lk</code>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -945,19 +819,6 @@ function togglePasswordVisibility(inputId, button) {
     }
 }
 
-function fillDemo(email) {
-    const emailInput = document.getElementById('email');
-    const passInput = document.getElementById('password');
-    if (emailInput) {
-        emailInput.value = email;
-    }
-    if (passInput) {
-        passInput.value = 'Test@1234';
-    }
-    if (emailInput) {
-        emailInput.focus();
-    }
-}
 </script>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
