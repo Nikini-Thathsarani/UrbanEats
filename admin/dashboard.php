@@ -18,7 +18,11 @@ $roleStmt = $pdo->query(
 );
 $roleCounts = [];
 while ($row = $roleStmt->fetch()) {
-    $roleCounts[$row['role_name']] = (int) $row['total'];
+    $roleName = strtolower(trim((string) $row['role_name']));
+    if ($roleName === 'kitchen staff') {
+        $roleName = 'staff';
+    }
+    $roleCounts[$roleName] = (int) $row['total'];
 }
 
 // Logins today
@@ -99,7 +103,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <span class="stat-value"><?= $loginsToday ?></span>
                 <span class="stat-label">Logins Today</span>
             </div>
-            <div class="stat-sub">Active platform sessions</div>
+            <div class="stat-sub">Successful sign-ins recorded today</div>
         </div>
     </div>
 
