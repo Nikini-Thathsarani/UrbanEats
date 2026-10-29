@@ -702,7 +702,7 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
                 <?php endif; ?>
 
-                <form method="POST" action="<?= url('auth/login.php') ?>" class="form-box" novalidate>
+                <form method="POST" action="<?= url('auth/login.php') ?>" class="form-box" autocomplete="off" novalidate>
                     <?= csrf_field() ?>
 
                     <!-- Email Address -->
@@ -718,7 +718,7 @@ require_once __DIR__ . '/../includes/header.php';
                         <div class="input-wrapper-inner">
                             <input id="email" name="email" type="email" class="styled-text-input"
                                    placeholder="Enter your email address" maxlength="150" required
-                                   value="<?= e($email) ?>" autocomplete="email">
+                                   value="<?= e($email) ?>" autocomplete="off">
                         </div>
                     </div>
 
